@@ -304,17 +304,17 @@ const houseReady = "(?:(?:-?)(sdannyye))?";
 // Group 10
 const houseInProcess = "(?:(?:-?)(stroyashchiyesya))?";
 // Group 11
+const houseType = "(?:(?:-?)(kvartiry|kottedzhi|taunkhausy|pomeshcheniya))?";
+// Group 12
 const houseClass =
   "(?:(?:-?)(ekonom-klassa|standart|biznes-klassa|elit-klassa|dachnyy|komfort-klassa|premium))?";
-// Group 12
-const houseType = "(?:(?:-?)(kvartiry|kottedzhi|taunkhausy|pomeshcheniya))?";
 // Group 13
-const paymentMethod = "(?:(?:-?)(rassrochka))?";
-// Group 14
-const repairs = "(?:(?:-?)(s-remontom))?";
-// Group 15
 const rooms =
   "(?:(?:-?)(odnokomnatnyye|dvukhkomnatnyye|trekhkomnatnyye|chetyrekhkomnatnyye))?";
+// Group 14
+const paymentMethod = "(?:(?:-?)(rassrochka))?";
+// Group 15
+const repairs = "(?:(?:-?)(s-remontom))?";
 
 let totalRegExpString =
   lang +
@@ -327,11 +327,11 @@ let totalRegExpString =
   street +
   houseReady +
   houseInProcess +
-  houseClass +
   houseType +
+  houseClass +
+  rooms +
   paymentMethod +
-  repairs +
-  rooms;
+  repairs;
 
 const finalRegExp = new RegExp(totalRegExpString);
 
